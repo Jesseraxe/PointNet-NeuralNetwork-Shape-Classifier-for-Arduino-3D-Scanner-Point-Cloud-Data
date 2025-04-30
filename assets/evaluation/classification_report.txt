@@ -1,0 +1,14 @@
+Test Loss: 0.4318
+Test Accuracy: 80.00%
+
+              precision    recall  f1-score   support
+
+      sphere     1.0000    1.0000    1.0000         2
+        cone     1.0000    1.0000    1.0000         2
+        cube     0.6667    1.0000    0.8000         2
+    cylinder     0.0000    0.0000    0.0000         2
+      cuboid     0.6667    1.0000    0.8000         2
+
+    accuracy                         0.8000        10
+   macro avg     0.6667    0.8000    0.7200        10
+weighted avg     0.6667    0.8000    0.7200        10
