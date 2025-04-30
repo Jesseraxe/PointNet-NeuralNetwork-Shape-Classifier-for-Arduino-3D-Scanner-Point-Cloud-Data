@@ -48,26 +48,30 @@ The script expects point cloud data organized as follows:
 * Scikit-learn
 * Seaborn
 * Matplotlib
+* Streamlit
+* Plotly
 
 You can install the required libraries using pip:
 ```bash
-pip install numpy torch scikit-learn seaborn matplotlib
+pip install numpy torch scikit-learn seaborn matplotlib streamlit plotly
 ```
 
 ## Usage
-Run the script from the command line:
+
+### Training and Evaluation
+Run the training script from the command line:
 ```bash
 python shape_classifier.py --mode <mode> --data_dir <path_to_data> [options]
 ```
 
-### Arguments:
+#### Arguments:
 * `--mode`: train, eval, or both (default: both).
 * `--data_dir`: Path to the root directory containing train, val, and test splits (default: data).
 * `--num_epochs`: Number of training epochs (default: 100).
 * `--batch_size`: Training batch size (default: 8).
 * `--learning_rate`: Training learning rate (default: 0.0005).
 
-### Examples:
+#### Examples:
 Train and evaluate:
 ```bash
 python shape_classifier.py --data_dir ./my_shape_data
@@ -82,6 +86,20 @@ Evaluate only (requires a trained model at assets/model/best_model.pth):
 ```bash
 python shape_classifier.py --mode eval --data_dir ./my_shape_data
 ```
+
+### Web Application
+The project includes a Streamlit web application that allows you to easily upload and classify point cloud files through a user-friendly interface.
+
+To run the web application:
+```bash
+streamlit run app.py
+```
+
+The web app provides:
+* File upload for point cloud (.txt) files
+* 3D visualization of the uploaded point cloud
+* Shape classification using the trained model
+* Display of prediction results and point cloud statistics
 
 ## Output Files
 The script creates an assets directory containing:
